@@ -1,0 +1,4 @@
+marial.alonsog@uqvirtual.edu.co,Dr. Juan Pérez,password123
+doctor2@example.com,Dra. María López,securepass
+doctor3@example.com,Dr. Carlos Rodríguez,m3dic0
+

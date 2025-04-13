@@ -1,4 +1,0 @@
-juan.perez@vitalapp.com,Juan Pérez,vitalapp123
-maria.garcia@vitalapp.com,María García,vitalapp456
-luis.rodriguez@vitalapp.com,Luis Rodríguez,vitalapp789
-
