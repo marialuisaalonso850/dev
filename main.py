@@ -5,13 +5,11 @@ from controller.functions import (
     consultar_medicos_en_db,
     ingresar_resultados_medicos,
     iniciar_sesion,
-    listar_pacientes,
-    ver_citas
+    listar_pacientes
 )
 from models.cita import Cita
 from models.usuario import Usuario
 from models.resultado import Resultado
-
 def menu_paciente(usuario_id):
     while True:
         print("\n--- Menú Paciente ---")

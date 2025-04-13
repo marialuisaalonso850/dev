@@ -1,5 +1,6 @@
 from db import conectar_db, cerrar_db
 from datetime import datetime
+from fastapi import HTTPException
 
 class Cita:
     def __init__(self, paciente_id, medico_id, fecha, hora):
@@ -10,6 +11,18 @@ class Cita:
 
     @staticmethod
     def agendar(paciente_id, medico_id, fecha, hora):
+        # Validar formato de fecha y hora
+        try:
+            fecha_obj = datetime.strptime(fecha, "%Y-%m-%d")
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Formato de fecha incorrecto. Use YYYY-MM-DD.")
+        
+        try:
+            hora_obj = datetime.strptime(hora, "%H:%M")
+        except ValueError:
+            raise HTTPException(status_code=400, detail="Formato de hora incorrecto. Use HH:MM.")
+
+        # Insertar la cita en la base de datos
         conn, cursor = conectar_db()
         cursor.execute("""
             INSERT INTO citas (paciente_id, medico_id, fecha, hora)

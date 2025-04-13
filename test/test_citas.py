@@ -5,9 +5,9 @@ from controller.functions import agendar_cita
 
 class TestAgendarCita(unittest.TestCase):
 
-    @patch('functions.conectar_db')
-    @patch('functions.enviar_correo')
-    @patch('functions.consultar_medicos_en_db')
+    @patch('controller.functions.conectar_db')
+    @patch('controller.functions.enviar_correo')
+    @patch('controller.functions.consultar_medicos_en_db')
     @patch('builtins.input')
     def test_agendar_cita_exitosa(self, mock_input, mock_consultar_medicos, mock_enviar_correo, mock_conectar_db):
         # Mock de la lista de médicos disponibles

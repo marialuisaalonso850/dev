@@ -4,9 +4,9 @@ from controller.functions import registrar_paciente
 
 class TestRegistrarPaciente(unittest.TestCase):
 
-    @patch('functions.input', side_effect=["Juan Pérez", "juan.perez@example.com", "123456", "123456789", "987654321"])
-    @patch('functions.conectar_db')
-    @patch('functions.enviar_correo')
+    @patch('controller.functions.input', side_effect=["Juan Pérez", "juan.perez@example.com", "123456", "123456789", "987654321"])
+    @patch('controller.functions.conectar_db')
+    @patch('controller.functions.enviar_correo')
     def test_registrar_paciente(self, mock_enviar_correo, mock_conectar_db, mock_input):
         # Simular conexión y cursor
         mock_conn = MagicMock()
